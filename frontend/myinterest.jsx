@@ -6,6 +6,9 @@ import configureStore from './store/store';
 
 document.addEventListener('DOMContentLoaded', () => {
   const store = configureStore();
+  window.getState = store.getState;
+  window.dispatch = store.dispatch;
+
   // if (window.currentUser) {
   //   const preloadedState = {
   //     session: { id: window.currentUser.id },
@@ -17,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
   //   delete window.currentUser;
   // } else {
   //   store = configureStore();
-  // }  
+  // }
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={store} />, root);
 });
