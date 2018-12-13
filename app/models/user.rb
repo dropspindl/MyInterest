@@ -23,13 +23,13 @@ class User < ApplicationRecord
   end
 
   def reset_session_token!
-    generate_unique_session_token
+    self.session_token = generate_token
     save!
     self.session_token
   end
 
   def ensure_session_token
-    generate_token unless self.session_token
+    self.session_token ||= generate_token
   end
 
   def self.find_by_credentials(username, password)
