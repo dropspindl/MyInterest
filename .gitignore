@@ -13,7 +13,9 @@
 !/log/.keep
 !/tmp/.keep
 
-/node_modules
+node_modules/
 /yarn-error.log
+bundle.js*
 
 .byebug_history
+/public/assets
