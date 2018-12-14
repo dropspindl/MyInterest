@@ -3,6 +3,8 @@
   border-bottom: 1px solid #cccccc;
   display: flex;
   justify-content: space-between;
+  margin: 5px;
+
 }
 
 .navbar-left {
@@ -10,9 +12,16 @@
 }
 
 .navbar-center {
-  
+  border-radius: 5px;
+  background-color: #e6e6e6;
+  width: calc(100% - 400px);
+
 }
 
 .navbar-right {
   display: flex;
+}
+
+.navbar i {
+  padding: 10px;
 }
