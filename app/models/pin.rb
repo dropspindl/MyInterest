@@ -5,6 +5,6 @@ class Pin < ApplicationRecord
   has_many :board_pins
 
   has :boards,
-    source: :board_pins
+    source: :board_pins,
     through: :board
 end
