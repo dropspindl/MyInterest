@@ -10,18 +10,26 @@ class SessionForm extends React.Component {
       // last_name: '',
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDemoClick = this.handleDemoClick.bind(this);
   }
 
   update(field) {
-    return e => this.setState({
+    return e => (this.setState({
       [field]: e.currentTarget.value
-    });
+    })
+  );
   }
 
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.processForm(user);
+  }
+
+  handleDemoClick(e) {
+    e.preventDefault();
+    const demoUser = {username: "Erica", password: "myinterest"};
+    this.props.processForm(demoUser);
   }
 
   renderErrors() {
@@ -36,36 +44,64 @@ class SessionForm extends React.Component {
     );
   }
 
+ // Please {this.props.formType} or {this.props.navLink}
+
   render() {
+    const other_option = () => {
+      if (this.props.formType === 'login') {
+        return 'Sign Up';
+      } else {
+        return 'Log In';
+      }
+    };
+
     return (
-      <div className="login-form-container">
+      <div>
+      <button className='login-signup-switch-button' value={this.props.navLink}> HEEE{other_option}</button>
+      <div className="login-form-container"></div>
         <form onSubmit={this.handleSubmit} className="login-form-box">
-          Welcome to myInterest!
+
+          <span className="logo"><i className="fab fa-pinterest"/></span>
           <br/>
-          Please {this.props.formType} or {this.props.navLink}
+
+          <h1 className="center"> Sign up to see more </h1>
+          <br />
+          <p className='center'> Access Pinterest's best ideas with a free account</p>
+          <br/>
+
+
           {this.renderErrors()}
           <div className="login-form">
             <br/>
-            <label>Username:
+            <label>
               <input type="text"
+                className="login-text-box"
                 value={this.state.username}
+                placeholder="username"
                 onChange={this.update('username')}
-                className="login-input"
               />
             </label>
-            <br/>
-            <label>Password:
+            <br/><br/>
+            <label>
               <input type="password"
+                className="login-text-box"
+                placeholder='password'
                 value={this.state.password}
                 onChange={this.update('password')}
-                className="login-input"
               />
             </label>
-            <br/>
+            <br/><br/>
             <input className="session-submit" type="submit" value={this.props.formType} />
+
+            <br/><br/>
+            <p className="center">OR</p>
+            <br/>
+
+            <button className='demo-button' onClick={this.handleDemoClick}>Demo User</button>
           </div>
         </form>
-      </div>
+        </div>
+
     );
   }
 }
