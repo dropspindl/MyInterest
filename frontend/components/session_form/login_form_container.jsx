@@ -7,14 +7,15 @@ import { connect } from 'react-redux';
 const mapStateToProps = ({ errors }) => {
   return {
     errors: errors.session,
-    formType: 'login',
-    navLink: <Link to='/signup'>sign up instead</Link>,
+    formType: 'Log in',
+    navLink: <Link to='/signup'>Sign up</Link>,
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
     processForm: (user) => dispatch(login(user)),
+    login: (user) => dispatch(login(user))
   };
 };
 

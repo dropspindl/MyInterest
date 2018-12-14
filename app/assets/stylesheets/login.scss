@@ -24,7 +24,7 @@
 
   border-radius: 10px;
   position: absolute;
-  top: 10%;
+  top: 12%;
   left: 33%;
 
 }
@@ -56,5 +56,34 @@
     color: white;
     border-radius: 5px;
     text-align: center;
+}
 
+.login-toggle-button {
+  background-color: white;
+  width: 130px;
+  height: 42px;
+  font-size: 1em;
+  font-weight: bolder;
+  border-radius: 5px;
+  position: absolute;
+  top: 8%;
+  right: 2%;
+  z-index: 2000;
+  text-align: center;
+  padding-top: 10px;
+}
+
+.login-toggle-button:hover {
+  -webkit-filter: brightness(80%); /* Safari */
+  filter: brightness(80%);
+}
+
+.demo-button:hover {
+  -webkit-filter: brightness(80%); /* Safari */
+  filter: brightness(80%);
+}
+
+.session-submit:hover {
+  -webkit-filter: brightness(80%); /* Safari */
+  filter: brightness(80%);
 }
