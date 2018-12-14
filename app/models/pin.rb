@@ -4,7 +4,7 @@ class Pin < ApplicationRecord
   belongs_to :user
   has_many :board_pins
 
-  has :boards,
+  has_many :boards,
     source: :board_pins,
     through: :board
 end
