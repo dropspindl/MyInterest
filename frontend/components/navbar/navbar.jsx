@@ -17,19 +17,20 @@ class NavBar extends React.Component {
     return (
       <div className="navbar">
         <span className='navbar-left'>
-          <i className="fab fa-pinterest"/>
+          <Link to='/'><i className="fab fa-pinterest"/></Link>
         </span>
 
         <span className='navbar-center'>
           <i className="fas fa-search"></i>
+          <input type='text' placeholder='Search' className='search-bar' />
         </span>
 
         <span className='navbar-right'>
           <i className="fas fa-user-circle"></i>
+          <p className="navbar-username">{this.props.currentUser.username}</p>
           <i className="fas fa-comment-dots"></i>
           <i className="fas fa-bell"></i>
-          <i className="fas fa-ellipsis-h"></i>
-          <button className="header-button" onClick={this.props.logout}>Log Out</button>
+          <i className="fas fa-ellipsis-h" onClick={this.props.logout}></i>
 
         </span>
       </div>
