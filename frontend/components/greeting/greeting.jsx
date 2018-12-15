@@ -8,8 +8,9 @@ const Greeting = ({ currentUser, logout }) => {
 
 
   const personalGreeting = () => (
-    <div className="header-group">
-      <h2 className="header-name">Hi, {currentUser.username}!</h2>
+    <div className="greeting">
+      <h2 className="greeting-name">{currentUser.username}!</h2>
+      <span className='user-icon'><i className="fas fa-user-circle"></i></span>
     </div>
   );
 

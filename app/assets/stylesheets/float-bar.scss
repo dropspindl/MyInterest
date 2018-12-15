@@ -1,0 +1,17 @@
+.float-bar{
+  margin: 15px;
+  margin-left: 15%;
+  opacity: 0.8;
+}
+
+.float-bar i{
+  padding: 15px;
+  border-radius: 100%;
+  font-size: 20px;
+  color: #737373;
+}
+
+.float-bar i:hover {
+  cursor: pointer;
+  background-color: #f2f2f2;
+}
