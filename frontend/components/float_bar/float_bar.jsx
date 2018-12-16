@@ -16,9 +16,9 @@ class FloatBar extends React.Component {
 
     return (
       <div className="float-bar">
-        <i class="fas fa-plus"></i>
-        <i class="fas fa-pencil-alt"></i>
-        <i class="fas fa-upload"></i>
+        <i className="fas fa-plus"></i>
+        <i className="fas fa-pencil-alt"></i>
+        <i className="fas fa-upload"></i>
 
       </div>
     );

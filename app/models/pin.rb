@@ -7,4 +7,6 @@ class Pin < ApplicationRecord
   has_many :boards,
     source: :board_pins,
     through: :board
+
+  has_one_attached :photo
 end

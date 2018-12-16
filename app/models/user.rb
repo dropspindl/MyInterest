@@ -9,12 +9,14 @@ class User < ApplicationRecord
   after_initialize :ensure_session_token
 
   has_many :boards
-  has_many :pins 
+  has_many :pins
   has_many :board_follows
 
   has_many :followed_boards,
     through: :board_follows,
     source: :board
+
+  has_one_attached :photo
 
 
   def password=(password)

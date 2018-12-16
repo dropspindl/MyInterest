@@ -1,0 +1,40 @@
+.greeting {
+  display: flex;
+  justify-content: space-between;
+  width: 100vw;
+  padding-left: 14%;
+  padding-right: 18%
+}
+
+.greeting-name {
+  font-weight: bold;
+  font-size: 36px;
+  padding: 18px;
+}
+
+.followers {
+  font-size: 14px;
+
+}
+
+.user-icon {
+  font-size: 70px;
+}
+
+.page-toggle {
+  font-size: 16px;
+
+  color: #737373;
+}
+
+.page-toggle li {
+  display: inline;
+  padding: 14px;
+  border-radius: 45%;
+  margin-right: 10px;
+}
+
+.page-toggle .current {
+  background-color: #f2f2f2;
+  color: black
+}

@@ -19,3 +19,6 @@ bundle.js*
 
 .byebug_history
 /public/assets
+
+# Ignore master key for decrypting credentials and more.
+/config/master.key
