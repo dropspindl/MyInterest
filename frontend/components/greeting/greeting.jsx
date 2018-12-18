@@ -15,7 +15,7 @@ const Greeting = ({ currentUser, logout }) => {
           <li><Link to={`/users/${currentUser.id}`}>Pins</Link></li>
         </ul>
       </span>
-      <span className='user-icon'><i className="fas fa-user-circle"></i></span>
+      <span id='user-icon'><i className="fas fa-user-circle"></i></span>
     </div>
   );
 
