@@ -24,10 +24,12 @@ class BoardShow extends React.Component {
     if (this.props.board === undefined) {
       return null;
     }
-    
+
     return (
       <div className='board-show'>
-        {this.props.board.title}
+        <span className='board-info'>
+          {this.props.board.title}
+        </span>
     </div>
   );
 
