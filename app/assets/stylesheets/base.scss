@@ -12,10 +12,18 @@ h3 {
   font-size: 18px;
 }
 
+p {
+  font-size: 16px;
+}
+
 button {
   border-radius: 5px;
   background-color: #C92228;
   color: white;
+}
+
+.hidden {
+	display: none;
 }
 
 
@@ -25,7 +33,7 @@ button {
 }
 
 .fas {    //font awesome icons
-  color: #8e8e8e;
+  color: rgb(142, 142, 142);
   font-size: 1.6em;
 }
 

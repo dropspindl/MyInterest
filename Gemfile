@@ -7,6 +7,7 @@ end
 
 gem 'jquery-rails'
 gem 'annotate'
+gem "aws-sdk-s3"
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

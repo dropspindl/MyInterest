@@ -3,11 +3,12 @@
   justify-content: space-between;
   width: 100vw;
   padding-left: 14%;
-  padding-right: 18%
+  padding-right: 18%;
+  margin-top: 142px;
 }
 
 .greeting-name {
-  font-weight: bold;
+  font-weight: 800;
   font-size: 36px;
   padding: 18px;
 }
@@ -24,14 +25,18 @@
 .page-toggle {
   font-size: 16px;
 
-  color: #737373;
+  color: rgb(142, 142, 142);;
 }
 
 .page-toggle li {
   display: inline;
   padding: 14px;
-  border-radius: 45%;
+  border-radius: 25px;
   margin-right: 10px;
+}
+
+.page-toggle li:hover {
+  cursor: pointer;
 }
 
 .page-toggle .current {

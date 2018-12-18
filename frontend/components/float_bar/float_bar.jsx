@@ -14,6 +14,11 @@ class FloatBar extends React.Component {
 
   render() {
 
+    function revealPopup() {
+      var popup = document.getElementById("popup");
+      popup.classList.toggle("show");
+    }
+
     return (
       <div className="float-bar">
         <i className="fas fa-plus"></i>
@@ -28,3 +33,10 @@ class FloatBar extends React.Component {
 
 
 export default FloatBar;
+
+
+// id="popup" onClick='revealPopup()'>
+// <ul className="popuptext hidden" id="myPopup">
+//   <li>Create Board</li>
+//   <li>Create Pin</li>
+// </ul>

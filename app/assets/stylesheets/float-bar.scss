@@ -1,15 +1,21 @@
 .float-bar{
-  margin: 15px;
+  margin: 12px;
   width: 100vw;
   padding-left: 15%;
-  opacity: 0.8;
+  padding-top: 12px;
+  padding-bottom: 5px;
+  opacity: 0.9;
+
+  position:fixed;
+  top: 59px;
+  background-color: white;
 }
 
 .float-bar i{
-  padding: 15px;
+  padding: 12px;
   border-radius: 100%;
-  font-size: 20px;
-  color: #737373;
+  font-size: 22px;
+  color: rgb(142, 142, 142);;
 }
 
 .float-bar i:hover {

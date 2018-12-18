@@ -26,8 +26,10 @@ class NavBar extends React.Component {
         </span>
 
         <span className='navbar-right'>
-          <i className="fas fa-user-circle"></i>
-          <p className="navbar-username">{this.props.currentUser.username}</p>
+          <Link to={`/users/${this.props.currentUser.id}`} className='navbar-user' >
+            <i className="fas fa-user-circle"></i>
+            <div className='navbar-username'>{this.props.currentUser.username}</div>
+          </Link>
           <i className="fas fa-comment-dots"></i>
           <i className="fas fa-bell"></i>
           <i className="fas fa-ellipsis-h" onClick={this.props.logout}></i>
