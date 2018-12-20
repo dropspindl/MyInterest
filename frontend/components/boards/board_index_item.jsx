@@ -8,7 +8,7 @@ const BoardIndexItem = ({ board, deleteBoard }) => {
 
       <div className='extra-margin-box'>
         <Link to={`/boards/${board.id}`}>
-          <img className="board-image" />
+          <img className="board-image" src={window.images.board_placeholder}/>
         </Link>
 
         <span className="board-title-span">

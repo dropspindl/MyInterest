@@ -22,3 +22,25 @@
   cursor: pointer;
   background-color: #f2f2f2;
 }
+
+.banana {
+  display: inline;
+  position: relative;
+}
+
+.banana .close-dropdown {
+  display: none;
+}
+
+.banana .open-dropdown {
+  display: block;
+  position: absolute;
+  height: 80px;
+  width:130px;
+  background: white;
+  z-index: 1;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid grey;
+  opacity: 1;
+}

@@ -1,0 +1,98 @@
+.pin-builder-main {
+  margin-top: 75px;
+  width: 100vw;
+  height: 100vh;
+  background-color: #e6e6e6;
+}
+
+.pin-builder-title {
+  width: 100%;
+  padding: 18px 22px;
+  font-size: 24px;
+  font-weight: 800;
+  background-color: white;
+  margin-bottom: 5px;
+}
+
+.pin-builder {
+  width: 600px;
+  height: 500px;
+  margin: auto;
+  background-color: white;
+  border-radius: 10px;
+  position: relative;
+}
+
+.pin-builder-submit {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: red;
+  color: white;
+  font-weight: bold;
+  padding: 10px 15px;
+  border-radius: 8px;
+
+}
+
+.pin-builder-parent {
+  display: flex;
+}
+
+.pin-photo-preview {
+  background-color: #e6e6e6;
+  font-size: 20px;
+  height: 340px;
+  width: 250px;
+  border-radius: 6px;
+  margin: 10px;
+  text-align: center;
+  color: grey;
+}
+
+.pin-photo-input {
+  background-color: #e6e6e6;
+  width: 250px;
+  border-radius: 6px;
+  margin: 10px;
+  padding: 8px 8px;
+
+}
+
+.pin-title-input{
+  font-size: 36px;
+  font-weight: 800px;
+  margin: 20px;
+}
+
+.pin-user-box {
+  display: flex;
+  margin: 20px;
+  font-size: 28px;
+}
+
+.pin-user-info {
+  margin: 2px 10px;
+}
+
+.pin-user-name {
+  font-weight: 700;
+}
+
+.pin-description-input {
+  margin: 5px;
+  width: 250px;
+  height: 150px;
+  padding: 12px 20px;
+  border: none;
+  font-size: 14px;
+  resize: none;
+}
+
+.pin-link-input {
+  margin: 5px;
+  padding: 8px 8px;
+  width: 310px;
+  border-radius: 6px;
+  border: 1px solid grey;
+}

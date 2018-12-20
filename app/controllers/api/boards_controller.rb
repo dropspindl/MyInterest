@@ -4,7 +4,6 @@ class Api::BoardsController < ApplicationController
       @board = current_user.boards.new(board_params)
 
       if @board.save
-        login(@board)
         render "api/boards/show"
       else
         render json: @board.errors.full_messages, status: 422

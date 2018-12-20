@@ -13,6 +13,7 @@ erica = User.create!(username: 'Erica', password: 'myinterest')
 anneke = User.create!(username:'Anneke', password: 'asdfasdf')
 natasha = User.create!(username: 'Natasha', password: 'asdfasdf')
 blake = User.create!(username: 'Blake', password: 'asdfasdf')
+liz = User.create!(username: 'Liz', password: 'asdfasdf')
 
 scribal = Board.create!(
   title: 'Scribal',
@@ -37,8 +38,21 @@ misc = Board.create!(
   description: "Everything else"
 )
 
+wire = Board.create!(
+  title:'Wireworking',
+  user_id: erica.id,
+  description: "All Things Wire"
+)
+
 testing = Board.create!(
   title: "You shouldn't see this",
   user_id: blake.id,
   description: "This board belongs to Blake and should not be on Erica's page"
+)
+
+glowballs = Pin.create!(
+  title: "Twine Balls with Fairy Lights"
+  user_id: erica.id,
+  description: "Great holiday decor or low level lighting"
+
 )

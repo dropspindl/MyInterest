@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import CreationDropdown from './creation_dropdown';
 
 class FloatBar extends React.Component {
   constructor(props) {
@@ -21,7 +22,8 @@ class FloatBar extends React.Component {
 
     return (
       <div className="float-bar">
-        <i className="fas fa-plus"></i>
+
+        <CreationDropdown openModal={this.props.openModal}/>
         <i className="fas fa-pencil-alt"></i>
         <i className="fas fa-upload"></i>
 

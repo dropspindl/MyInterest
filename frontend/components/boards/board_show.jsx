@@ -24,12 +24,20 @@ class BoardShow extends React.Component {
     if (this.props.board === undefined) {
       return null;
     }
-
+    //css in greeting
     return (
       <div className='board-show'>
-        <span className='board-info'>
-          {this.props.board.title}
+
+        <span className='board-show-info'>
+          <div className='board-info-left'>
+            <h1 className='board-show-title'>{this.props.board.title} </h1>
+            <h3 className='board-show-followers'>0 Pins &#8226; 0 Followers</h3>
+          </div>
+          <div className='board-info-right'>
+            <i className="fas fa-user-circle"></i>
+          </div>
         </span>
+
     </div>
   );
 
