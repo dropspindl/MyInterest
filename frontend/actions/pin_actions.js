@@ -30,6 +30,10 @@ export const fetchPins = (boardId) => dispatch => (
   PinApiUtil.fetchPins(boardId).then(payload => dispatch(receiveAllPins(payload.pins)))
 );
 
+export const fetchUserPins = (userId) => dispatch => (
+  PinApiUtil.fetchUserPins(userId).then(payload => dispatch(receiveAllPins(payload.pins)))
+);
+
 export const fetchPin = id => dispatch => (
   PinApiUtil.fetchPin(id).then(pin => dispatch(receivePin(pin)))
 );

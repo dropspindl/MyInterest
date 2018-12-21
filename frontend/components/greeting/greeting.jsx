@@ -12,7 +12,7 @@ const Greeting = ({ currentUser, logout }) => {
         <br/>
         <ul className='page-toggle'>
           <li className='current'>Boards</li>
-          <li><Link to={`/users/${currentUser.id}`}>Pins</Link></li>
+          <li><Link to={`/users/${currentUser.id}/pins/`}>Pins</Link></li>
         </ul>
       </span>
       <span id='user-icon'><i className="fas fa-user-circle"></i></span>

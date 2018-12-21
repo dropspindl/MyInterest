@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const PinIndexItem = ({ pin }) => {
   return (
     <li className='pin-item'>
-      <div className='pin-photo'>.</div>
+      <img src={pin.photo} className='pin-photo'/>
       <div>{pin.title}</div>
     </li>);
 };

@@ -14,6 +14,7 @@ import BoardIndexContainer from './boards/board_index_container';
 import BoardShowContainer from './boards/board_show_container';
 import BoardFormContainer from './boards/board_form_container';
 import PinBuilderContainer from './pins/pin_builder_container';
+import UserPinsContainer from './pins/user_pins_container';
 
 
 import DiscoveryPlaceholder from './discovery/discovery_placeholder';
@@ -32,6 +33,7 @@ const App = () => (
 
     <Switch>
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
+      <ProtectedRoute path='/users/:userId/pins' component={UserPinsContainer} />
       <Route path='/users/:userId' component={BoardIndexContainer} />
       <AuthRoute path="/login" component={LoginFormContainer} />
       <ProtectedRoute path='/boards/:boardId/edit' component={BoardFormContainer} />
