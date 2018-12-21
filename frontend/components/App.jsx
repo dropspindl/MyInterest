@@ -18,6 +18,7 @@ import UserPinsContainer from './pins/user_pins_container';
 
 
 import DiscoveryPlaceholder from './discovery/discovery_placeholder';
+import MarginHolder from './discovery/margin_holder';
 
 
 
@@ -26,6 +27,8 @@ const App = () => (
     <Modal />
     <header>
       <ProtectedRoute path='/' component={NavBarContainer} />
+      <ProtectedRoute exact path='/' component={MarginHolder} />
+
       <ProtectedRoute path='/users' component={FloatBarContainer} />
       <ProtectedRoute path='/boards' component={FloatBarContainer} />
       <ProtectedRoute path='/users' component={GreetingBarContainer}/>
@@ -41,7 +44,7 @@ const App = () => (
       <Route path='/boards/:boardId' component={BoardShowContainer} />
       <ProtectedRoute path='/pins/create' component={PinBuilderContainer} />
 
-      <ProtectedRoute path='/' component={DiscoveryPlaceholder} />
+      <ProtectedRoute path='/' component={UserPinsContainer} />
     </Switch>
   </div>
 );

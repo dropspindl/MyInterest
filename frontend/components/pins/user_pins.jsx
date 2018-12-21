@@ -12,7 +12,8 @@ class UserPins extends React.Component {
   }
 
   componentDidMount(){
-    this.props.fetchUserPins(this.props.match.params.userId);
+    // this.props.fetchUserPins(this.props.match.params.userId);
+    this.props.fetchUserPins(this.props.currentUser.id);
   }
 
   componentDidUpdate(oldProps) {
