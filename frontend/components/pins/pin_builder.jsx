@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import BoardPinDropdown from './board_pin_dropdown';
 
 class PinBuilder extends React.Component {
   constructor(props) {
@@ -9,28 +10,63 @@ class PinBuilder extends React.Component {
       description: '',
       user_id: this.props.currentUser.id,
       link: '',
-      photo: ''
+      boardId: null ,
+      photoFile: null,
+      photoUrl: null
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentDidMount(){
+    this.props.fetchBoards(this.state.user_id);
+  }
 // <i className="fas fa-angle-left"></i>
-update(field) {
-  return e => this.setState({
-    [field]: e.currentTarget.value
-  });
-}
+  update(field) {
+    return e => {
 
-handleSubmit(e) {
-  e.preventDefault();
-  const pin = Object.assign({}, this.state);
-  // const board =
-  this.props.processPin(pin);
-  // this.props.processPinJoin(boardId, pin.id);
-}
+      this.setState({
+      [field]: e.currentTarget.value
+    });}
+  }
+
+  handleFile(e) {
+    const file = e.currentTarget.files[0];
+    const fileReader = new FileReader();
+    fileReader.onloadend = () => {
+      this.setState({photoFile: file, photoUrl: fileReader.result});
+    };
+    if (file) {
+    fileReader.readAsDataURL(file);
+    }
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    const formData = new FormData();
+    formData.append('pin[title]', this.state.title);
+    formData.append('pin[photo]', this.state.photoFile);
+    formData.append('pin[description]', this.state.description);
+    formData.append('pin[link]', this.state.link);
+    formData.append('pin[user_id]', this.state.userId);
+
+    // const pin = Object.assign({}, this.state);
+    const boardId = this.state.boardId;
+    this.props.processPin(formData).then((newPin) =>
+    { 
+      this.props.processBoardPin(newPin.pin.id, boardId);
+    }
+  );
+  }
 
 
   render() {
+    const boards = this.props.boards.map(board => {
+      return (
+        <option value={board.id}>{board.title}</option>
+      );
+    });
+
+    const preview = this.state.photoUrl ? <img src={this.state.photoUrl} /> : null;
 
     return (
       <div className='pin-builder-main'>
@@ -43,14 +79,18 @@ handleSubmit(e) {
           <div className='pin-builder-parent'>
 
             <div className='pin-builder-left'>
-              <div className='pin-photo-preview'>
-                <br/><br/><br/>
+              <div className='pin-photo-preview-placeholder'>
+                <div className='pin-photo-preview'>{preview}</div>
+                <br/><br/><br/><br/>
                 <i className="fas fa-camera"></i><br/><br/>
                 <p>Photo Preview</p>
+
               </div>
-              <input type="text"
+
+
+              <input type="file"
                 value={this.state.photo}
-                onChange={this.update('photo')}
+                onChange={this.handleFile.bind(this)}
                 className="pin-photo-input"
                 placeholder="Import photo"
               />
@@ -85,7 +125,14 @@ handleSubmit(e) {
               className="pin-link-input"
               placeholder="Add the URL this Pin links to"
             />
+          <br/>
+            <select className="pin-board"
 
+              onChange={this.update('boardId')}
+            >
+            <option selected="true" disabled='disabled'>Please select a Board</option>
+              {boards}
+            </select>
 
 
             </div>

@@ -1,6 +1,8 @@
 import { connect } from 'react-redux';
 import PinBuilder from './pin_builder';
-import { createPin } from '../../actions/pin_actions';
+import { createPin, createBoardPin } from '../../actions/pin_actions';
+import { fetchBoards } from '../../actions/board_actions';
+
 
 const mapStateToProps = state => ({
   boards: Object.values(state.entities.boards),
@@ -8,7 +10,9 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
- processBoard: (pin) => dispatch(createPin(pin))
+ processPin: (pin) => dispatch(createPin(pin)),
+ processBoardPin: (pinId, boardId) => dispatch(createBoardPin(pinId, boardId)),
+ fetchBoards: (userId) => dispatch(fetchBoards(userId))
 });
 
 export default connect(

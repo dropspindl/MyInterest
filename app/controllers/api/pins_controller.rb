@@ -1,9 +1,11 @@
 class Api::PinsController < ApplicationController
 
   def create
+
       @pin = current_user.pins.new(pin_params)
 
       if @pin.save
+
         render "api/pins/show"
       else
         render json: @pin.errors.full_messages, status: 422
@@ -11,7 +13,12 @@ class Api::PinsController < ApplicationController
     end
 
   def index
-    @pins = User.find(params[:user_id]).pins
+    @pins = Board.find(params[:board_id]).pins
+    render 'api/pins/index'
+  end
+
+  def all_pins_for_user
+    @pins = User.find(params[:user_id]).pins 
     render 'api/pins/index'
   end
 
@@ -30,7 +37,7 @@ class Api::PinsController < ApplicationController
   private
 
   def pin_params
-    params.require(:pin).permit(:title, :description)
+    params.require(:pin).permit(:title, :photo, :description, :link, :board_id, :user_id)
   end
 
 end

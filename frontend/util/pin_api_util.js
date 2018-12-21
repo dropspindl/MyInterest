@@ -14,9 +14,11 @@ export const fetchPin = id => (
 
 export const createPin = pin => (
   $.ajax({
-    url: 'api/pins',
+    url: '/api/pins',
     method: 'POST',
-    data: { pin }
+    data: pin,
+    contentType: false,
+    processData: false
   })
 );
 
@@ -24,5 +26,20 @@ export const deletePin = id => (
   $.ajax({
     url: `api/pins/${id}`,
     method: 'DELETE'
+  })
+);
+
+export const createBoardPin = (pinId, boardId) => (
+  $.ajax({
+    url: 'api/board_pins',
+    method: 'POST',
+    data: { board_pin: {pin_id: pinId, board_id: boardId }}
+  })
+);
+
+export const fetchUsersPins = (userId) => (
+  $.ajax({
+    url: `api/users/${userId}/pins`,
+    method: 'GET'
   })
 );

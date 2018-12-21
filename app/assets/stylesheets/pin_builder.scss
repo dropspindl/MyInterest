@@ -39,15 +39,25 @@
   display: flex;
 }
 
-.pin-photo-preview {
+.pin-photo-preview-placeholder {
   background-color: #e6e6e6;
   font-size: 20px;
-  height: 340px;
+  height: 330px;
   width: 250px;
   border-radius: 6px;
   margin: 10px;
   text-align: center;
   color: grey;
+  position: relative;
+}
+
+.pin-photo-preview {
+  position: absolute;
+  z-index: 2;
+  max-height: 330px;
+  max-width: 250px;
+  margin: auto;
+  border-radius: 3px;
 }
 
 .pin-photo-input {
@@ -95,4 +105,9 @@
   width: 310px;
   border-radius: 6px;
   border: 1px solid grey;
+}
+
+.pin-board {
+  width: 250px;
+  padding: 10px;
 }

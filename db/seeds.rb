@@ -5,9 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'open-uri'
+
 
 User.delete_all
 Board.delete_all
+Pin.delete_all
 
 erica = User.create!(username: 'Erica', password: 'myinterest')
 anneke = User.create!(username:'Anneke', password: 'asdfasdf')
@@ -51,8 +54,15 @@ testing = Board.create!(
 )
 
 glowballs = Pin.create!(
-  title: "Twine Balls with Fairy Lights"
+  title: "Twine Balls with Fairy Lights",
   user_id: erica.id,
   description: "Great holiday decor or low level lighting"
 
 )
+
+earlyrus = Pin.create!(
+  title: "Early Rus",
+  user_id: erica.id
+)
+earlyrus_photo = open('https://s3-us-west-1.amazonaws.com/myinterest-dev/68T7eJ2uYzRV9ZvdmL4QghhD')
+earlyrus.photo.attach(io: earlyrus_photo, filename: 'earlyrus.jpg')
