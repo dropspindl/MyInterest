@@ -7,16 +7,15 @@ const mapStateToProps = (state, ownProps) => {
   const board = state.entities.boards[ownProps.match.params.boardId];
 
   return {
-    board,
-    // pins: selectPins(state, board) (from pokedex??)
-    // loading: state.ui.loading.detailLoading
+    pins: Object.values(state.entities.pins),
+    board
   };
 };
 
 const mapDispatchToProps = dispatch => ({
   deleteBoard: id => dispatch(deleteBoard(id)),
   fetchBoard: id => dispatch(fetchBoard(id)),
-  fetchPins: userId => dispatch(fetchPins(userId))
+  fetchPins: boardId => dispatch(fetchPins(boardId))
 });
 
 export default connect(

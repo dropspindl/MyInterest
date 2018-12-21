@@ -26,8 +26,8 @@ const receiveBoardPin = (pinId, boardId) => ({
   boardId: boardId
 });
 
-export const fetchPins = (userId) => dispatch => (
-  PinApiUtil.fetchPins(userId).then(payload => dispatch(receiveAllPins(payload.pins)))
+export const fetchPins = (boardId) => dispatch => (
+  PinApiUtil.fetchPins(boardId).then(payload => dispatch(receiveAllPins(payload.pins)))
 );
 
 export const fetchPin = id => dispatch => (

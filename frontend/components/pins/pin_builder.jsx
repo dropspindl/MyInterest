@@ -52,10 +52,9 @@ class PinBuilder extends React.Component {
     // const pin = Object.assign({}, this.state);
     const boardId = this.state.boardId;
     this.props.processPin(formData).then((newPin) =>
-    { 
-      this.props.processBoardPin(newPin.pin.id, boardId);
-    }
-  );
+    {this.props.processBoardPin(newPin.pin.id, boardId);});
+
+    this.props.history.push(`/boards/${boardId}`);
   }
 
 
@@ -130,7 +129,7 @@ class PinBuilder extends React.Component {
 
               onChange={this.update('boardId')}
             >
-            <option selected="true" disabled='disabled'>Please select a Board</option>
+            <option selected={true} disabled='disabled'>Please select a Board</option>
               {boards}
             </select>
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import BoardShowContainer from './board_show_container';
+import PinIndexItem from '../pins/pin_index_item';
 // import CreateBoardFormContainer from './create_board_form_container';
 
 class BoardShow extends React.Component {
@@ -12,12 +13,15 @@ class BoardShow extends React.Component {
 
   componentDidMount(){
     this.props.fetchBoard(this.props.match.params.boardId);
-    this.props.fetchPins(13);
+    this.props.fetchPins(this.props.match.params.boardId);
   }
 
   componentDidUpdate(oldProps) {
     if (oldProps.match.params.boardId !== this.props.match.params.boardId) {
       this.props.fetchBoard(this.props.match.params.boardId);
+    }
+    if (oldProps.match.params.boardId !== this.props.match.params.boardId) {
+      this.props.fetchPins(this.props.match.params.boardId);
     }
   }
 
@@ -25,7 +29,15 @@ class BoardShow extends React.Component {
     if (this.props.board === undefined) {
       return null;
     }
-    //css in greeting
+
+    const pins = this.props.pins.map(pin => {
+      return (
+          <PinIndexItem
+            key={pin.id}
+            pin={pin} />
+      );
+    });
+
     return (
       <div className='board-show'>
 
@@ -38,6 +50,12 @@ class BoardShow extends React.Component {
             <i className="fas fa-user-circle"></i>
           </div>
         </span>
+
+        <div className="pin-index">
+          <ul className='pin-list'>
+            { pins }
+          </ul>
+        </div>
 
     </div>
   );

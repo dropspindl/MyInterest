@@ -1,7 +1,7 @@
-export const fetchPins = (userId) => (
+export const fetchPins = (boardId) => (
   $.ajax({
     method: 'GET',
-    url: `api/pins?user_id=${userId}`,
+    url: `api/pins?board_id=${boardId}`
   })
 );
 
