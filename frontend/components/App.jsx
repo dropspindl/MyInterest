@@ -35,6 +35,7 @@ const App = () => (
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
       <ProtectedRoute path='/users/:userId/pins' component={UserPinsContainer} />
       <Route path='/users/:userId' component={BoardIndexContainer} />
+      <Route path='/users/:userId/boards' component={BoardIndexContainer} />
       <AuthRoute path="/login" component={LoginFormContainer} />
       <ProtectedRoute path='/boards/:boardId/edit' component={BoardFormContainer} />
       <Route path='/boards/:boardId' component={BoardShowContainer} />

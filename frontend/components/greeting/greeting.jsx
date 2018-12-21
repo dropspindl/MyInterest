@@ -11,7 +11,7 @@ const Greeting = ({ currentUser, logout }) => {
         <p className="followers"> 0 followers &#8226; 0 following </p>
         <br/>
         <ul className='page-toggle'>
-          <li className='current'>Boards</li>
+          <li className='current'><Link to={`/users/${currentUser.id}/boards/`}>Boards</Link></li>
           <li><Link to={`/users/${currentUser.id}/pins/`}>Pins</Link></li>
         </ul>
       </span>

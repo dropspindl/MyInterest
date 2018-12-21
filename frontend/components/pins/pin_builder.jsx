@@ -52,7 +52,10 @@ class PinBuilder extends React.Component {
     // const pin = Object.assign({}, this.state);
     const boardId = this.state.boardId;
     this.props.processPin(formData).then((newPin) =>
-    {this.props.processBoardPin(newPin.pin.id, boardId);});
+    {
+      const pinId = Object.values(newPin.pin)[0].id;
+      this.props.processBoardPin(pinId, boardId);
+    });
 
     this.props.history.push(`/boards/${boardId}`);
   }

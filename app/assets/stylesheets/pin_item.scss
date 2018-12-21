@@ -6,20 +6,32 @@
   justify-content: center;
 }
 
-.pin-item:hover {
-  cursor: pointer;
-  background-color: #f2f2f2;
-}
-
 .pin-item {
   width: 240px;
-  margin: 5px;
+  margin: 10px 5px;
+  border-radius: 8px;
+}
+
+.pin-item:hover {
+  cursor: pointer;
+  background-color: #e6e6e6;
+}
+
+.margin-holder {
+  padding: 10px;
 }
 
 .pin-photo {
+
   margin: auto;
-  border-radius: 5px;
-  background-color: #cccccc;
-  width: 90%;
+  border-radius: 6px;
+
+  width: 220px;
+
+}
+
+.pin-title {
+  margin: 10px 0px;
+  font-weight: 600;
 
 }

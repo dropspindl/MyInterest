@@ -18,7 +18,7 @@ class Api::PinsController < ApplicationController
   end
 
   def all_pins_for_user
-    @pins = User.find(params[:user_id]).pins 
+    @pins = User.find(params[:user_id]).pins
     render 'api/pins/index'
   end
 
