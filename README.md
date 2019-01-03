@@ -4,9 +4,13 @@
 
 myInterest is pinterest clone I created on the Rails stack. It is fully seeded with my own interests and crafts.
 
-## Live site
+## [Live site](https://my-interest.herokuapp.com/#/login)
 
 myInterest is hosted on Heroku and can be accessed [here](https://my-interest.herokuapp.com/#/login)
+
+## [Video Walkthrough](https://drive.google.com/file/d/1xXcKuGJTjssA6eMnDf1icRbfBbSgQ5y3/view) 
+
+The video walkthrough can be accessed [here](https://drive.google.com/file/d/1xXcKuGJTjssA6eMnDf1icRbfBbSgQ5y3/view)
 
 ## Technologies
 
